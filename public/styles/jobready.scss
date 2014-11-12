@@ -1,0 +1,110 @@
+
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+header {
+	@extend .navbar;
+	@extend .navbar-static-top;
+
+	> div {
+		@extend .container;
+
+		h1 {
+			@extend .navbar-header;
+
+			font-size: 1em;
+			background-image: url(/public/images/logo.png);
+			background-repeat: no-repeat;
+			background-position: left 9px;
+			text-indent: -10000em;
+
+			width: 150px;
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			color: transparent;
+			height: 50px;
+			margin: 0;
+		}
+
+		nav {
+			@extend .collapse;
+			@extend .navbar-collapse;
+
+			ul {
+				@extend .nav;
+				@extend .navbar-nav;
+
+				li {
+
+				}
+			}
+		}
+	}
+}
+
+body {
+	h1 {
+		@extend .page-header;
+	}
+}
+
+.dashboard {
+	@extend .container;
+
+	> div {
+		@extend .row;
+
+		h3 {
+			font-size: 0.9em;
+			color: gray;
+			text-transform: uppercase;
+		}
+
+		.candidates {
+			@extend .col-sm-6;
+
+			.candidate {
+				img {
+					display: inline-block;
+					width: 20px;
+				}
+
+				h4, ul {
+					margin-left: 20px;
+				}
+			}
+		}
+
+		.vacancies {
+			@extend .col-sm-6;
+		}
+	}
+}
+
+footer {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+{
+  "name": "JobReadyExercise",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+  ],
+  "author": {
+    "name": "Jonathan Conway",
+    "email": "jonathan.conway@gmail.com",
+    "url": "http://jonathanconway.net"
+  },
+  "homepage": "http://jobreadyexercise.herokuapp.com",
+  "engines": {
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "async-waterfall": "~0.1.5",
+    "bootstrap-sass": "^3.3.0",
+    "express": "*",
+    "html5-boilerplate-npm": "~4.1.0-B",
+    "jade": "^1.7.0",
+    "node-sass": "^0.9.3",
+    "requirejs": "2.1.11"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-favicons": "^0.6.4",
+    "grunt-nodemon": "^0.3.0"
+  },
+  "bundleDependencies": [],
+  "private": true,
+  "main": "server.js"
+}

@@ -1,0 +1,38 @@
+extends layout
+
+block content
+
+	div.dashboard
+		h1 Dashboard
+		
+		div
+			div.candidates
+				h2 Candidates
+
+				h3 Active
+
+				div.candidate
+					img(src='/public/images/profile-icon.png')
+					h4.name Jonathan Conway
+					span.occupation Programmer
+
+					ul.updates
+						li
+							span.update-text
+								| Applied for <a href="#">Programmer</a> role at <a href="#">Microsoft</a>
+							span.update-date
+								| Yesterday
+						li
+							span.update-text
+								| Contacted JobReady Centre
+							span.update-date
+								| 2 days ago
+
+			div.vacandies
+				h2 Vacancies
+
+				h3 Today
+
+				ul
+					li
+						| Cleaner at McDonalds Stanmore
