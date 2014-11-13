@@ -1,0 +1,12 @@
+
+
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+.labels-on-top {
+	label {
+		text-transform: uppercase;
+		font-size: 0.8em;
+		display: block;
+		margin: 0;
+	}
+}

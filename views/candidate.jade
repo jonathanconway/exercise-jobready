@@ -1,0 +1,78 @@
+extends layout
+
+block content
+
+	div.candidate
+		h1 
+			img.candidate-image(src=avatarImageUrl || '/public/images/icon_78759_profile.svg')
+			span.name #{name}
+			span.user-role Employee
+
+		section.personal-details
+			h3 Personal Details
+
+			div
+				div.first-name
+					label First Name
+					span #{firstName}
+
+				div.last-name
+					label Last Name
+					span #{lastName}
+
+				div.dob
+					label Date of Birth
+					span #{dobText}
+					span  | 
+					span.age #{age} y.o.
+
+				div.gender
+					label Gender
+					span #{gender}
+
+			div
+				div.email
+					label Email
+					span #{email}
+
+				div.phone
+					label Phone
+					span #{phone}
+
+				div.mobile
+					label Mobile
+					span #{mobile}
+
+			div
+				div.home-address
+					label Home Address
+					span #{homeAddress}
+
+				div.postal-address
+					label Postal Address
+					span #{postalAddress}
+
+		section.history
+			h3 History
+
+			div
+				ul
+					-each activity in recentActivity
+						-if(activity.gap)
+							li.gap
+						li.activity
+							div.activity-image
+								img(src=activity.iconImageUrl)
+
+							div.activity-body
+								a(href='/activity/' + activity.id) !{activity.text}
+								span.date(title=activity.dateText) #{activity.dateCalendarText}
+
+				aside.filters
+					span.filters-heading Filters
+					div
+						div.work
+							label
+								input(type='checkbox')
+								span Work
+

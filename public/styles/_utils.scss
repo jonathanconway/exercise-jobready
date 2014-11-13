@@ -1,0 +1,10 @@
+
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+.link-only-on-mouseover {
+	color: $text-color;
+
+	&:hover {
+		color: $link-color;
+	}
+}

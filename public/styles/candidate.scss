@@ -1,0 +1,164 @@
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+@import './_utils.scss';
+@import './_labels.scss';
+
+.candidate {
+	@extend .container;
+
+	h1 {
+		@media screen and (max-width: $screen-xs) {
+			font-size: 1.5em;
+		}
+
+		img.candidate-image {
+			width: 1.9em;
+			border-radius: 100%;
+		}
+
+		.name {
+			margin-left: 0.5em;
+			display: inline-block;
+		}
+
+		.user-role {
+			@extend .label;
+			@extend .label-default;
+			
+			margin-left: 0.5em;
+		}
+	}
+
+	.personal-details > div {
+		@extend .row;
+		@extend .labels-on-top;
+
+		> div {
+			@extend .form-group;
+		}
+
+		.first-name,
+		.last-name,
+		.dob,
+		.gender {
+			@extend .col-xs-6;
+			@extend .col-sm-3;
+			@extend .col-md-3;
+			@extend .col-lg-3;
+		}
+
+		.email {
+			@extend .col-xs-6;
+			@extend .col-sm-6;
+			@extend .col-md-6;
+			@extend .col-lg-6;
+		}
+
+		.phone,
+		.mobile {
+			@extend .col-xs-6;
+			@extend .col-sm-3;
+			@extend .col-md-3;
+			@extend .col-lg-3;
+		}
+
+		.home-address,
+		.postal-address {
+			@extend .col-xs-12;
+			@extend .col-sm-6;
+			@extend .col-md-6;
+			@extend .col-lg-6;
+		}
+
+		.age {
+			color: $gray-light;
+		}
+	}
+
+	.history {
+
+		padding-top: 10px;
+
+		> div {
+			@extend .row;
+
+			ul {
+				@extend .col-sm-9;
+				@extend .col-md-9;
+				@extend .col-lg-9;
+
+				list-style: none;
+				padding: 0;
+
+				li.activity {
+					@extend .media;
+
+					margin-top: $padding-base-vertical;
+
+					.activity-image {
+						@extend .pull-left;
+					}
+
+					.activity-body {
+						@extend .media-body;
+					}
+
+					img {
+						width: 26px;
+					}
+
+					.date {
+						color: $gray-light;
+						font-size: 0.8em;
+						display: block;
+					}
+
+					a {
+						@extend .link-only-on-mouseover;
+
+						a {
+							font-weight: bold;
+						}
+					}
+				}
+
+				li.gap {
+					&:before, &:after {
+						background-color: $gray-light;
+						width: 10px;
+						height: 10px;
+						content: ' ';
+						margin: 10px;
+						border-radius: 100%;
+						display: block;
+					}
+				}
+			}
+
+			.filters {
+				@extend .col-sm-3;
+				@extend .col-md-3;
+				@extend .col-lg-3;
+				@extend .panel;
+				@extend .panel-default;
+
+				> div {
+					@extend .panel-body;
+
+					.filters-heading {
+						@extend .panel-heading;
+					}
+
+					.work {
+						@extend .input-group;
+
+
+					}
+				}
+			}
+		}
+	}
+
+
+	//icon_6048_briefcase.svg
+}

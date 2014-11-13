@@ -11,31 +11,35 @@ block content
 			div.candidates
 				h2 Candidates
 
-				h3 Active
+				section
+					h3 Active
 
-				-each candidate in recentActiveCandidates
-					div.candidate
-						div.candidate-image
-							img(src=candidate.avatarImageUrl || '/public/images/icon_78759_profile.svg')
-						div.candidate-body
-							h4.name #{candidate.name}
-							span.occupation  | #{candidate.occupation}
+					-each candidate in recentActiveCandidates
+						div.candidate
+							div.candidate-image
+								img(src=candidate.avatarImageUrl || '/public/images/icon_78759_profile.svg')
+							div.candidate-body
+								h4.name
+									a(href='/candidate/' + candidate.id) #{candidate.name}
+								span.occupation  | #{candidate.occupation}
 
-							ul.updates
-								-each activity in candidate.recentActivity
-									li
-										span.update-text !{activity.text}
-										span.update-date(title=activity.dateText) #{activity.dateCalendarText}
+								ul.updates
+									-each activity in candidate.recentActivity
+										li
+											span.update-text !{activity.text}
+											span.update-date(title=activity.dateText) #{activity.dateCalendarText}
 
 			div.vacancies
 				h2 Vacancies
 
-				h3 Today
+				section
+					h3 Today
 
-				-each vacancy in recentVacanciesToday
-					+vacancy(vacancy)
+					-each vacancy in recentVacanciesToday
+						+vacancy(vacancy)
 
-				h3 Yesterday
+				section
+					h3 Yesterday
 
-				-each vacancy in recentVacanciesYesterday
-					+vacancy(vacancy)
+					-each vacancy in recentVacanciesYesterday
+						+vacancy(vacancy)

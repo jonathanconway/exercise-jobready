@@ -1,0 +1,97 @@
+
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+@import './_utils';
+
+.dashboard {
+	@extend .container;
+
+	> div {
+		@extend .row;
+
+		.candidates {
+			@extend .col-sm-6;
+
+			.candidate {
+				@extend .media;
+
+				margin-top: 10px;
+
+				.candidate-image {
+					@extend .pull-left;
+
+					img {
+						width: 1.9em;
+						border-radius: 100%;
+					}
+				}
+
+				.candidate-body {
+					@extend .media-body;
+
+					h4 {
+						font-size: 14px;
+						display: inline-block;
+						font-weight: bold;
+						margin-bottom: 0;
+
+						a {
+							@extend .link-only-on-mouseover;
+						}
+					}
+
+					ul {
+						list-style: none;
+						padding: 0;
+						font-size: 12px;
+
+						li {
+							margin-top: $padding-base-vertical;
+
+							.update-date {
+								display: block;
+								font-size: 10px;
+								color: $gray-light;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.vacancies {
+			@extend .col-sm-6;
+
+			.vacancy {
+				@extend .media;
+
+				margin-top: 10px;
+
+				.vacancy-image {
+					@extend .pull-left;
+
+					img {
+						width: 1.9em;
+					}
+				}
+
+				.vacancy-body {
+					@extend .media-body;
+
+					h4 {
+						font-size: 14px;
+						display: inline-block;
+						font-weight: bold;
+						margin-bottom: 0;
+					}
+
+					.date {
+						display: block;
+						font-size: 10px;
+						color: $gray-light;
+					}
+				}
+			}
+		}
+	}
+}
