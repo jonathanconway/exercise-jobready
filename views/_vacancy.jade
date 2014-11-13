@@ -1,0 +1,8 @@
+mixin vacancy(vacancy)
+	div.vacancy
+		div.vacancy-image
+			img(src='/public/images/icon_2872_pin.svg')
+		div.vacancy-body
+			h4.name #{vacancy.jobTitle}
+			span.occupation  at #{vacancy.companyName}
+			span.date(title=vacancy.dateText) #{vacancy.dateCalendarText}

@@ -2,8 +2,7 @@
   "name": "JobReadyExercise",
   "version": "0.0.1",
   "description": "",
-  "keywords": [
-  ],
+  "keywords": [],
   "author": {
     "name": "Jonathan Conway",
     "email": "jonathan.conway@gmail.com",
@@ -19,6 +18,7 @@
     "express": "*",
     "html5-boilerplate-npm": "~4.1.0-B",
     "jade": "^1.7.0",
+    "moment": "^2.8.3",
     "node-sass": "^0.9.3",
     "requirejs": "2.1.11"
   },

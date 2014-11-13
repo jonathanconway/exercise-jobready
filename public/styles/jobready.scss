@@ -1,4 +1,6 @@
 
+$line-height-computed: 10px;
+
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
 header {
@@ -7,23 +9,20 @@ header {
 
 	> div {
 		@extend .container;
+		border-bottom: solid 1px $page-header-border-color;
 
 		h1 {
 			@extend .navbar-header;
 
-			font-size: 1em;
 			background-image: url(/public/images/logo.png);
 			background-repeat: no-repeat;
 			background-position: left 9px;
 			text-indent: -10000em;
-
+			border: none;
 			width: 150px;
-			display: inline-block;
-			position: relative;
-			overflow: hidden;
 			color: transparent;
 			height: 50px;
-			margin: 0;
+			margin: 0 10px 0 0;
 		}
 
 		nav {
@@ -42,9 +41,14 @@ header {
 	}
 }
 
+
 body {
 	h1 {
 		@extend .page-header;
+
+	}
+
+	h2 {
 	}
 }
 
@@ -56,33 +60,99 @@ body {
 
 		h3 {
 			font-size: 0.9em;
-			color: gray;
+			color: $gray-light;
 			text-transform: uppercase;
+			font-weight: bold;
+			margin-top: 15px;
 		}
 
 		.candidates {
 			@extend .col-sm-6;
 
 			.candidate {
-				img {
-					display: inline-block;
-					width: 20px;
+				@extend .media;
+
+				margin-top: 10px;
+
+				.candidate-image {
+					@extend .pull-left;
+
+					img {
+						width: 26px;
+						border-radius: 100%;
+					}
 				}
 
-				h4, ul {
-					margin-left: 20px;
+				.candidate-body {
+					@extend .media-body;
+
+					h4 {
+						font-size: 14px;
+						display: inline-block;
+						font-weight: bold;
+						margin-bottom: 0;
+					}
+
+					ul {
+						list-style: none;
+						padding: 0;
+						font-size: 12px;
+
+						li {
+							margin-top: $padding-base-vertical;
+
+							.update-date {
+								display: block;
+								font-size: 10px;
+								color: $gray-light;
+							}
+						}
+					}
 				}
 			}
 		}
 
 		.vacancies {
 			@extend .col-sm-6;
+
+			.vacancy {
+				@extend .media;
+
+				margin-top: 10px;
+
+				.vacancy-image {
+					@extend .pull-left;
+
+					img {
+						width: 26px;
+					}
+				}
+
+				.vacancy-body {
+					@extend .media-body;
+
+					h4 {
+						font-size: 14px;
+						display: inline-block;
+						font-weight: bold;
+						margin-bottom: 0;
+					}
+
+					.date {
+						display: block;
+						font-size: 10px;
+						color: $gray-light;
+					}
+				}
+			}
 		}
 	}
 }
 
 footer {
-	text-align: center;
+	@extend .navbar-fixed-bottom;
+	@extend .container;
+	@extend .text-center;
 }
 
 

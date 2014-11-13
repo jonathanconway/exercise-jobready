@@ -1,5 +1,7 @@
 extends layout
 
+include _vacancy.jade
+
 block content
 
 	div.dashboard
@@ -11,28 +13,29 @@ block content
 
 				h3 Active
 
-				div.candidate
-					img(src='/public/images/profile-icon.png')
-					h4.name Jonathan Conway
-					span.occupation Programmer
+				-each candidate in recentActiveCandidates
+					div.candidate
+						div.candidate-image
+							img(src=candidate.avatarImageUrl || '/public/images/icon_78759_profile.svg')
+						div.candidate-body
+							h4.name #{candidate.name}
+							span.occupation  | #{candidate.occupation}
 
-					ul.updates
-						li
-							span.update-text
-								| Applied for <a href="#">Programmer</a> role at <a href="#">Microsoft</a>
-							span.update-date
-								| Yesterday
-						li
-							span.update-text
-								| Contacted JobReady Centre
-							span.update-date
-								| 2 days ago
+							ul.updates
+								-each activity in candidate.recentActivity
+									li
+										span.update-text !{activity.text}
+										span.update-date(title=activity.dateText) #{activity.dateCalendarText}
 
-			div.vacandies
+			div.vacancies
 				h2 Vacancies
 
 				h3 Today
 
-				ul
-					li
-						| Cleaner at McDonalds Stanmore
+				-each vacancy in recentVacanciesToday
+					+vacancy(vacancy)
+
+				h3 Yesterday
+
+				-each vacancy in recentVacanciesYesterday
+					+vacancy(vacancy)

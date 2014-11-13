@@ -82,8 +82,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-nodemon');
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-favicons');
+	// grunt.loadNpmTasks('grunt-favicons');
 
 	grunt.registerTask('default', ['concurrent:dev']);	
-	grunt.registerTask('build', ['favicons']);
+	// grunt.registerTask('build', ['favicons']);
 };
