@@ -15,6 +15,6 @@ define(['app', 'moment', '../services/repository'], function(app, moment, reposi
 					})
 			};
 
-		res.render('home', model);
+		res.render('dashboard', model);
 	});
 });

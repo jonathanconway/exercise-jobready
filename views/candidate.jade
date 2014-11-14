@@ -2,7 +2,7 @@ extends layout
 
 block content
 
-	div.candidate
+	div.candidate.page
 		h1 
 			img.candidate-image(src=avatarImageUrl || '/public/images/icon_78759_profile.svg')
 			span.name #{name}
@@ -61,15 +61,15 @@ block content
 						-if(activity.gap)
 							li.gap
 						li.activity
-							div.activity-image
+							div
 								img(src=activity.iconImageUrl)
 
-							div.activity-body
+							div
 								a(href='/activity/' + activity.id) !{activity.text}
 								span.date(title=activity.dateText) #{activity.dateCalendarText}
 
 				aside.filters
-					span.filters-heading Filters
+					span Filters
 					div
 						div.work
 							label

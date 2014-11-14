@@ -8,7 +8,7 @@ requirejs.config({
 requirejs([
 	'app',
 	'express',
-	'node-sass',
+	'less-middleware',
 	'path',
 	'module',
 	'fs',
@@ -16,7 +16,7 @@ requirejs([
 	function (
 		app,
 		express,
-		nodeSass,
+		nodeLess,
 		path,
 		module,
 		fs,
@@ -28,15 +28,19 @@ requirejs([
 			});
 			app.use('/favicon.ico', express.static(path.join(dirName, 'public/images/') + 'favicon.ico'));
 
-			// Sass
-			app.use(
-				nodeSass.middleware({
-					src: dirName,
-					dest: dirName,
-					debug: process.argv.indexOf('--debug') > -1
-				})
-			);
-			app.use(express.static(dirName));
+			// Less
+			app.use(nodeLess(dirName + '/public'));
+			app.use(express.static(dirName + '/public'));
+
+			// // Sass
+			// app.use(
+			// 	nodeSass.middleware({
+			// 		src: dirName,
+			// 		dest: dirName,
+			// 		debug: process.argv.indexOf('--debug') > -1
+			// 	})
+			// );
+			// app.use(express.static(dirName));
 
 			// Jade
 			app.set('views', dirName + '/views');

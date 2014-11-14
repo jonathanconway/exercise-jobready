@@ -1,0 +1,34 @@
+
+header {
+	&:extend(.navbar);
+	&:extend(.navbar-static-top);
+
+	> div {
+		&:extend(.container);
+
+		border-bottom: solid 1px @page-header-border-color;
+
+		> h1 {
+			&:extend(.navbar-header);
+
+			background-image: url(/public/images/logo.png);
+			background-repeat: no-repeat;
+			background-position: left 9px;
+			text-indent: -10000em;
+			border: none;
+			width: 150px;
+			color: transparent;
+			height: 50px;
+			margin: 0 10px 0 0;
+		}
+
+		nav {
+			&:extend(.navbar-collapse.collapse);
+
+			ul {
+				&:extend(.nav all);
+				&:extend(.navbar-nav all);
+			}
+		}
+	}
+}

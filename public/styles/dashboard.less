@@ -1,24 +1,22 @@
-
-@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
-
 @import './_utils';
 
-.dashboard {
-	@extend .container;
+.dashboard.page {
+	&:extend(.container);
 
-	> div {
-		@extend .row;
+	.dashboard-row {
+		&:extend(.row);
 
 		.candidates {
-			@extend .col-sm-6;
+			.make-sm-column(6);
 
 			.candidate {
-				@extend .media;
+				&:extend(.media);
 
 				margin-top: 10px;
 
 				.candidate-image {
-					@extend .pull-left;
+					&:extend(.pull-left);
+					&:extend(.media .pull-left);
 
 					img {
 						width: 1.9em;
@@ -27,16 +25,16 @@
 				}
 
 				.candidate-body {
-					@extend .media-body;
+					&:extend(.media-body);
 
 					h4 {
 						font-size: 14px;
 						display: inline-block;
 						font-weight: bold;
-						margin-bottom: 0;
+						margin: 0.5em 0 0 0;
 
 						a {
-							@extend .link-only-on-mouseover;
+							&:extend(.link-only-on-mouseover);
 						}
 					}
 
@@ -46,12 +44,12 @@
 						font-size: 12px;
 
 						li {
-							margin-top: $padding-base-vertical;
+							margin-top: @padding-base-vertical;
 
 							.update-date {
 								display: block;
 								font-size: 10px;
-								color: $gray-light;
+								color: @gray-light;
 							}
 						}
 					}
@@ -60,15 +58,16 @@
 		}
 
 		.vacancies {
-			@extend .col-sm-6;
+			.make-sm-column(6);
 
 			.vacancy {
-				@extend .media;
+				&:extend(.media);
 
 				margin-top: 10px;
 
 				.vacancy-image {
-					@extend .pull-left;
+					&:extend(.pull-left);
+					&:extend(.media .pull-left);
 
 					img {
 						width: 1.9em;
@@ -76,19 +75,20 @@
 				}
 
 				.vacancy-body {
-					@extend .media-body;
+					&:extend(.media-body);
 
 					h4 {
 						font-size: 14px;
 						display: inline-block;
 						font-weight: bold;
 						margin-bottom: 0;
+						margin: 0.5em 0 0 0;
 					}
 
 					.date {
 						display: block;
 						font-size: 10px;
-						color: $gray-light;
+						color: @gray-light;
 					}
 				}
 			}

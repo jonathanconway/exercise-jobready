@@ -16,17 +16,12 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		sass: {
-			dev: {
-				files: [{
-					expand: true,
-					cwd: 'public/styles',
-					src: ['**/*.scss'],
-					dest: 'public/styles',
-					ext: '.css'
-				}],
+		less: {
+			development: {
 				options: {
-					debugInfo: true
+				},
+				files: {
+					'public/styles/jobready.css': 'public/styles/jobready.less'
 				}
 			},
 		},
@@ -40,15 +35,15 @@ module.exports = function(grunt) {
 			}
 		},
 		concurrent: {
-			dev: ['jshint', 'sass', 'nodemon', 'watch'],
+			dev: ['jshint', 'less', 'nodemon', 'watch'],
 			options: {
 				logConcurrentOutput: true
 			}
 		},
 		watch: {
-			sass: {
-				files: ['public/styles/*.scss', 'public/images/*.jpg'],
-				tasks: ['sass'],
+			styles: {
+				files: ['public/styles/**/*.less', 'public/images/*.jpg'],
+				tasks: ['less'],
 				options: {
 					spawn: false,
 					livereload: true
@@ -78,7 +73,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-nodemon');
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-contrib-watch');

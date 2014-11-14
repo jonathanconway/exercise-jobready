@@ -1,12 +1,12 @@
 
 body {
 	h1 {
-		@extend .page-header;
+		&:extend(.page-header);
 	}
 
 	section h3 {
 		font-size: 0.9em;
-		color: $gray-light;
+		color: @gray-light;
 		text-transform: uppercase;
 		font-weight: bold;
 		margin-top: 15px;

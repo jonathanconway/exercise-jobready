@@ -4,8 +4,7 @@
 		{
 			"follow_symlinks": true,
 			"path": "../",
-			"folder_exclude_patterns": [".sass-cache"],
-			"file_exclude_patterns": ["*.map", "*.css", "*.git", "*.sublime-workspace"]
+			"file_exclude_patterns": ["*.map", "public/styles/*.css", "*.git", "*.sublime-workspace"]
 		}
 	]
 }
