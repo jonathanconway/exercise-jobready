@@ -71,8 +71,8 @@ block content
 				aside.filters
 					span Filters
 					div
-						div.work
-							label
-								input(type='checkbox')
-								span Work
-
+						-each filter in ['Work', 'Applications', 'Interviews', 'Placements', 'Apprenticeships', 'Licences', 'References']
+							div.filter
+								label
+									input(type='checkbox')
+									span #{filter}

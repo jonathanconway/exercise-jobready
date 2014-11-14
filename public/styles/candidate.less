@@ -29,8 +29,8 @@
 	}
 
 	.personal-details > div {
-		&:extend(.row);
-		&:extend(.labels-on-top);
+		.make-row();
+		&:extend(.labels-on-top all);
 
 		> div {
 			&:extend(.form-group);
@@ -40,33 +40,33 @@
 		.last-name,
 		.dob,
 		.gender {
-			&:extend(.col-xs-6);
-			&:extend(.col-sm-3);
-			&:extend(.col-md-3);
-			&:extend(.col-lg-3);
+			.make-xs-column(6);
+			.make-sm-column(3);
+			.make-md-column(3);
+			.make-lg-column(3);
 		}
 
 		.email {
-			&:extend(.col-xs-6);
-			&:extend(.col-sm-6);
-			&:extend(.col-md-6);
-			&:extend(.col-lg-6);
+			.make-xs-column(6);
+			.make-sm-column(6);
+			.make-md-column(6);
+			.make-lg-column(6);
 		}
 
 		.phone,
 		.mobile {
-			&:extend(.col-xs-6);
-			&:extend(.col-sm-3);
-			&:extend(.col-md-3);
-			&:extend(.col-lg-3);
+			.make-xs-column(6);
+			.make-sm-column(3);
+			.make-md-column(3);
+			.make-lg-column(3);
 		}
 
 		.home-address,
 		.postal-address {
-			&:extend(.col-xs-12);
-			&:extend(.col-sm-6);
-			&:extend(.col-md-6);
-			&:extend(.col-lg-6);
+			.make-xs-column(12);
+			.make-sm-column(6);
+			.make-md-column(6);
+			.make-lg-column(6);
 		}
 
 		.age {
@@ -79,14 +79,15 @@
 		padding-top: 10px;
 
 		> div {
-			&:extend(.row);
-			&:extend(.container);
+			.make-row();
+			.container-fixed();
+
+			padding-left: 0;
 
 			ul {
-				&:extend(.col-sm-9);
-				&:extend(.col-md-9);
-				&:extend(.col-lg-9);
-
+				.make-sm-column(9);
+				.make-md-column(9);
+				.make-lg-column(9);
 
 				list-style: none;
 				padding: 0;
@@ -98,6 +99,7 @@
 
 					> div:first-child {
 						&:extend(.pull-left);
+						&:extend(.media .pull-left);
 					}
 
 					> div:last-child {
@@ -137,28 +139,31 @@
 			}
 
 			.filters {
-				&:extend(.col-sm-3);
-				&:extend(.col-md-3);
-				&:extend(.col-lg-3);
+				.make-sm-column(3);
+				.make-md-column(3);
+				.make-lg-column(3);
+
+				padding-left: 0;
+				padding-right: 0;
 
 				&:extend(.panel);
 				&:extend(.panel-default);
 
-				span {
+				> span {
+					&:extend(.panel-default .panel-heading);
 					&:extend(.panel-heading);
+
+					display: block;
 				}
 
-				div {
+				> div {
 					&:extend(.panel-body);
 
-					.work {
+					.filter {
 						&:extend(.input-group);
 					}
 				}
 			}
 		}
 	}
-
-
-	//icon_6048_briefcase.svg
 }
