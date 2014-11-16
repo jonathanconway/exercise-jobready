@@ -33,11 +33,12 @@ define(['app', 'moment'], function(app, moment) {
 					},
 					{
 						id: 1,
-						text: 'Contacted <strong>Sydney</strong> JobReady Centre',
+						text: 'Phoned <strong>Sydney</strong> JobReady Centre',
+						staffId: 1,
 						date: twoDaysAgo,
 						dateText: twoDaysAgo.format('LLL'),
 						dateCalendarText: twoDaysAgo.calendar(),
-						activityType: 'communication'
+						activityType: 'phonecall'
 					},
 					{
 						id: 2,
@@ -53,7 +54,7 @@ define(['app', 'moment'], function(app, moment) {
 						date: feb10,
 						dateText: feb10.format('LLL'),
 						dateCalendarText: feb10.calendar(),
-						activityType: 'work'
+						activityType: 'education'
 					}
 				]
 			},

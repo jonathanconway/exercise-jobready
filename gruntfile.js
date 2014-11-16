@@ -30,19 +30,19 @@ module.exports = function(grunt) {
 				script: 'server.js',
 				options: {
 					args: ['dev'],
-					ext: '*.js,*.jade'
+					ext: '*.js,*.json,*.jade'
 				}
 			}
 		},
 		concurrent: {
-			dev: ['jshint', 'less', 'nodemon', 'watch'],
+			dev: ['jshint', 'less', 'watch', 'nodemon'],
 			options: {
 				logConcurrentOutput: true
 			}
 		},
 		watch: {
 			styles: {
-				files: ['public/styles/**/*.less', 'public/images/*.jpg'],
+				files: ['public/styles/**/*.less', 'public/images/*.*'],
 				tasks: ['less'],
 				options: {
 					spawn: false,
@@ -50,10 +50,11 @@ module.exports = function(grunt) {
 				}
 			},
 			scripts: {
-				files: ['*.js', 'public/scripts/*.js', 'views/*.jade'],
+				files: ['*.json', '*.js', 'routes/*.js', 'services/*.js', 'public/scripts/*.js', 'views/*.jade'],
 				tasks: ['jshint'],
 				options: {
 					spawn: false,
+					interval: 1000,
 					livereload: true
 				}
 			}

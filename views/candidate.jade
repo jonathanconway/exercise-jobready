@@ -1,5 +1,8 @@
 extends layout
 
+block scripts
+	script(src='/node_modules/requirejs/require.js', data-main='/public/scripts/candidate')
+
 block content
 
 	div.candidate.page
@@ -10,6 +13,7 @@ block content
 
 		section.personal-details
 			h3 Personal Details
+				a.edit(href='#')  Edit
 
 			div
 				div.first-name
@@ -56,11 +60,12 @@ block content
 			h3 History
 
 			div
-				ul
+				ul.history-list.filter-all
 					-each activity in recentActivity
 						-if(activity.gap)
 							li.gap
-						li.activity
+								span #{activity.monthYear}
+						li.activity(class=activity.activityType)
 							div
 								img(src=activity.iconImageUrl)
 
@@ -71,8 +76,16 @@ block content
 				aside.filters
 					span Filters
 					div
-						-each filter in ['Work', 'Applications', 'Interviews', 'Placements', 'Apprenticeships', 'Licences', 'References']
+						-each activityType in allActivityTypes
 							div.filter
 								label
-									input(type='checkbox')
-									span #{filter}
+									input(type='checkbox', value=activityType.id)
+									span #{activityType.title}
+										span.filter-count (#{activityType.activitiesCount})
+
+
+
+
+
+
+

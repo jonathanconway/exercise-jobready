@@ -17,18 +17,43 @@ define(['app', 'moment', '../services/repository'], function(app, moment, reposi
 			activity.iconImageUrl = {
 				application: '/public/images/icon_79983_resume.svg',
 				communication: '/public/images/icon_82326_speech_bubbles.svg',
-				work: '/public/images/icon_6048_briefcase.svg'
+				phonecall: '/public/images/icon_56382_phone.svg',
+				work: '/public/images/icon_6048_briefcase.svg',
+				education: '/public/images/icon_2402_college_cap.svg'
 			}[activity.activityType];
 
 			// put in gaps, where they exist
 			if (index > 0 && model.recentActivity[index - 1].date.diff(activity.date, 'months') >= 2) {
 				activity.gap = 1;
+				activity.monthYear = moment(activity.date).format('MMMM YY');
 			}
 		});
+
+		model.allActivityTypes =
+			['Work',
+			 'Education',
+			 'Communication',
+			 'Applications',
+			 'Interviews',
+			 'Placements',
+			 'Apprenticeships',
+			 'Licences',
+			 'References'].map(function (activityType) {
+			 	return {
+			 		title: activityType,
+			 		id: activityType.toLowerCase(),
+			 		activitiesCount:
+			 			model.recentActivity.filter(function (recentActivity) {
+			 				return recentActivity.activityType === activityType.toLowerCase();
+			 			}).length
+			 	}
+			 });
 
 		// if (!candidate) {
 		// 	res.redirect('/404');
 		// }
+
+		model.serializedModel = JSON.stringify(model);
 
 		res.render('candidate', model);
 	});

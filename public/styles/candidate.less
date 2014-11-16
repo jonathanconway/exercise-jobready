@@ -28,54 +28,66 @@
 		}
 	}
 
-	.personal-details > div {
-		.make-row();
-		&:extend(.labels-on-top all);
+	.personal-details {
+		h3 .edit {
+			&:extend(.btn-default);
+			&:extend(.btn);
+
+			text-transform: initial;
+			padding: 0 5px;
+			margin-left: 10px;
+			margin-top: -3px;
+		}
 
 		> div {
-			&:extend(.form-group);
-		}
+			.make-row();
+			&:extend(.labels-on-top all);
 
-		.first-name,
-		.last-name,
-		.dob,
-		.gender {
-			.make-xs-column(6);
-			.make-sm-column(3);
-			.make-md-column(3);
-			.make-lg-column(3);
-		}
+			> div {
+				&:extend(.form-group);
+			}
 
-		.email {
-			.make-xs-column(6);
-			.make-sm-column(6);
-			.make-md-column(6);
-			.make-lg-column(6);
-		}
+			.first-name,
+			.last-name,
+			.dob,
+			.gender {
+				.make-xs-column(6);
+				.make-sm-column(3);
+				.make-md-column(3);
+				.make-lg-column(3);
+			}
 
-		.phone,
-		.mobile {
-			.make-xs-column(6);
-			.make-sm-column(3);
-			.make-md-column(3);
-			.make-lg-column(3);
-		}
+			.email {
+				.make-xs-column(6);
+				.make-sm-column(6);
+				.make-md-column(6);
+				.make-lg-column(6);
+			}
 
-		.home-address,
-		.postal-address {
-			.make-xs-column(12);
-			.make-sm-column(6);
-			.make-md-column(6);
-			.make-lg-column(6);
-		}
+			.phone,
+			.mobile {
+				.make-xs-column(6);
+				.make-sm-column(3);
+				.make-md-column(3);
+				.make-lg-column(3);
+			}
 
-		.age {
-			color: @gray-light;
+			.home-address,
+			.postal-address {
+				.make-xs-column(12);
+				.make-sm-column(6);
+				.make-md-column(6);
+				.make-lg-column(6);
+			}
+
+			.age {
+				color: @gray-light;
+			}
 		}
 	}
 
 	.history {
-
+		border-top: 1px solid @page-header-border-color;
 		padding-top: 10px;
 
 		> div {
@@ -96,6 +108,7 @@
 					&:extend(.media);
 
 					margin-top: @padding-base-vertical;
+					display: none;
 
 					> div:first-child {
 						&:extend(.pull-left);
@@ -136,6 +149,20 @@
 						display: block;
 					}
 				}
+
+				&.filter-all li.activity {
+					display: list-item;
+				}
+
+				&.filter-work li.work { display: list-item; }
+				&.filter-education li.education { display: list-item; }
+				&.filter-communication li.communication { display: list-item; }
+				&.filter-applications li.applications { display: list-item; }
+				&.filter-interviews li.interviews { display: list-item; }
+				&.filter-placements li.placements { display: list-item; }
+				&.filter-apprenticeships li.apprenticeships { display: list-item; }
+				&.filter-licences li.licences { display: list-item; }
+				&.filter-references li.references { display: list-item; }
 			}
 
 			.filters {
@@ -161,6 +188,11 @@
 
 					.filter {
 						&:extend(.input-group);
+
+						.filter-count {
+							color: @gray-light;
+							margin-left: 0.2em;
+						}
 					}
 				}
 			}
