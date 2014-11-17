@@ -9,6 +9,11 @@ mixin _candidate_activity_detail(candidateId, activityDetail)
 
 		a.close(href='/candidate/' + candidateId) X
 
+		- if (activityDetail.activityType === 'education')
+			div.map
+				label Location
+				img(src='http://maps.googleapis.com/maps/api/staticmap?center=' + encodeURI(activityDetail.location) + '&size=300x150')
+
 		div.notes
 			label Notes
 			textarea !{activityDetail.notes}

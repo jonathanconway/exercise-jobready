@@ -43,7 +43,8 @@ define(['app', 'moment'], function(app, moment) {
 				dateText: feb10.format('LLL'),
 				dateCalendarText: feb10.calendar(),
 				activityType: 'education',
-				notes: 'ccccccccccccccccccccccccccccccccccccccccccccccccccc'
+				notes: 'ccccccccccccccccccccccccccccccccccccccccccccccccccc',
+				location: 'Hornsby TAFE'
 			}
 		],
 		candidates = [
