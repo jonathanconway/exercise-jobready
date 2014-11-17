@@ -1,5 +1,7 @@
 extends layout
 
+include _candidate_activity_detail
+
 block scripts
 	script(src='/node_modules/requirejs/require.js', data-main='/public/scripts/candidate')
 
@@ -70,7 +72,7 @@ block content
 								img(src=activity.iconImageUrl)
 
 							div
-								a(href='/activity/' + activity.id,title='Show more details') !{activity.text}
+								a(href='/candidate/' + id + '/' + activity.id,title='Show more details') !{activity.text}
 								span.date(title=activity.dateText) #{activity.dateCalendarText}
 
 				aside.filters
@@ -82,6 +84,8 @@ block content
 									input(type='checkbox', value=activityType.id)
 									span #{activityType.title}
 										span.filter-count (#{activityType.activitiesCount})
+				-if (activityDetail)
+					+_candidate_activity_detail(id, activityDetail)
 
 
 

@@ -1,0 +1,14 @@
+mixin _candidate_activity_detail(candidateId, activityDetail)
+	div.activity-detail
+		header
+			img(src=activityDetail.iconImageUrl)
+
+			div
+				h4 !{activityDetail.text}
+				span.date(title=activityDetail.dateText) #{activityDetail.dateCalendarText}
+
+		a.close(href='/candidate/' + candidateId) X
+
+		div.notes
+			label Notes
+			textarea !{activityDetail.notes}
