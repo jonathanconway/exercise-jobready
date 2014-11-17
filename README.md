@@ -17,7 +17,7 @@
 
 
 * Check out and install the JobReady solution:
-	`git clone https://bitbucket.org/jonathanconway/jobready` ↩
+	`git clone https://bitbucket.org/jonathanconway/jobreadytest` ↩
 	`npm install`
 
 * Now you can run the solution
