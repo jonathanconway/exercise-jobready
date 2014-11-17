@@ -8,21 +8,7 @@ html(lang='en')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(rel='stylesheet', href='/public/styles/jobready.css')
 	body
-		header
-			div
-				h1='JobReady'
-				nav
-					ul
-						li
-							a(href='/') Dashboard
-						li
-							a(href='/candidates') Candidates
-						li
-							a(href='/employers') Employers
-						li
-							a(href='/vacancies') Vacancies
-						li
-							a(href='/placements') Placements
+		include _header
 
 		block content
 

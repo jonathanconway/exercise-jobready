@@ -12,5 +12,6 @@ define([], function () {
 			className += 'filter-all';
 		}
 		historyListEl.className = 'history-list ' + className;
-	})
+	});
+	
 });
