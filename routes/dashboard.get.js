@@ -12,7 +12,8 @@ define(['app', 'moment', '../services/repository'], function(app, moment, reposi
 				recentVacanciesYesterday:
 					vacancies.filter(function (vacancy) {
 						return vacancy.date.diff(moment(new Date()), 'days') < 0;
-					})
+					}),
+				serializedModel: '{}'
 			};
 
 		res.render('dashboard', model);

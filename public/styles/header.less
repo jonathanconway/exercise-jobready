@@ -20,7 +20,16 @@ body > header {
 		}
 
 		nav {
-			&:extend(.navbar-collapse.collapse);
+			&:extend(.nav-collapse);
+
+			@media screen and (max-width: @screen-md) {
+				ul {
+					li:nth-child(n+4),
+					li:nth-child(n+5) {
+						display: none;
+					}
+				}
+			}
 
 			ul {
 				&:extend(.nav all);
