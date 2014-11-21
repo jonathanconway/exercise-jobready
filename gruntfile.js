@@ -67,7 +67,7 @@ module.exports = function(grunt) {
 				appleTouchBackgroundColor: 'white'
 			},
 			icons: {
-				src: 'public/images/logo.png',
+				src: 'public/images/favicon.png',
 				dest: 'public/images'
 			},
 		},
