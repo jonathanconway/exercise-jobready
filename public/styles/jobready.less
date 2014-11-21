@@ -5,13 +5,17 @@
 @import './_type';
 @import './_labels';
 
-h2 {
-	margin-top: 0;
+html, body {
+	overflow: hidden;
 }
 
 @import './header';
 @import './dashboard';
 @import './candidate';
+
+body {
+	padding-bottom: @navbar-height;
+}
 
 footer {
 	&:extend(.navbar-fixed-bottom);

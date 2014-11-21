@@ -13,5 +13,4 @@ define([], function () {
 		}
 		historyListEl.className = 'history-list ' + className;
 	});
-	
 });

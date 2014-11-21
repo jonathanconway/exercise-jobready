@@ -2,6 +2,14 @@
 body {
 	h1 {
 		&:extend(.page-header);
+
+		@media screen and (max-width: @screen-xs) {
+			margin-top: 10px;
+		}
+	}
+
+	h2 {
+		margin-top: 0;
 	}
 
 	section h3 {

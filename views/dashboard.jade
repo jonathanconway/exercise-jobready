@@ -2,12 +2,21 @@ extends layout
 
 include _vacancy.jade
 
+block scripts
+	script(src='/node_modules/requirejs/require.js', data-main='/public/scripts/dashboard')
+
 block content
 
 	div.dashboard.page
 		h1 Dashboard
 		
-		div.dashboard-row
+		div.dashboard-view
+			div
+				button.candidates.active Candidates
+				button.vacancies Vacancies
+				button.events Events
+
+		div.dashboard-row.candidates
 			div.candidates
 				h2 Candidates
 
@@ -43,3 +52,5 @@ block content
 
 					-each vacancy in recentVacanciesYesterday
 						+vacancy(vacancy)
+
+			div.events
