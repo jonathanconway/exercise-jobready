@@ -10,8 +10,9 @@ block content
 	div.candidate.page
 		h1 
 			img.candidate-image(src=avatarImageUrl || '/public/images/icon_78759_profile.svg')
-			span.name #{name}
-			span.user-role Employee
+			div
+				span.name #{name}
+				span.user-role Employee
 
 		section.personal-details
 			h3 Personal Details
@@ -87,7 +88,9 @@ block content
 				-if (activityDetail)
 					+_candidate_activity_detail(id, activityDetail)
 
-
+		nav
+			a.personal-details(href='#').active Personal Details
+			a.history(href='#') History
 
 
 

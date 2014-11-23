@@ -28,7 +28,7 @@
 		}
 	}
 
-	.personal-details {
+	> .personal-details {
 		h3 .edit {
 			&:extend(.btn-default);
 			&:extend(.btn);
@@ -86,7 +86,7 @@
 		}
 	}
 
-	.history {
+	> .history {
 		border-top: 1px solid @page-header-border-color;
 		position: relative;
 
@@ -196,4 +196,10 @@
 
 		@import './activity_detail';
 	}
+
+	nav {
+		display: none;
+	}
 }
+
+@import './candidate.mobile.less';

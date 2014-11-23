@@ -1,0 +1,66 @@
+@media screen and (max-width: @screen-xs) {
+	.candidate.page {
+		padding-left: 0;
+		padding-right: 0;
+
+		h1 {
+			position: relative;
+
+			img.candidate-image {
+				float: left;
+				width: 52px;
+			}
+
+			> div {
+				height: 42px;
+				display: inline-block;
+			}
+
+			.name {
+				margin-left: 0.5em;
+				display: inline-block;
+				width: 100%;
+			}
+
+			.user-role {
+				font-size: 0.5em;
+				float: left;
+				margin-left: 10px;
+				margin-top: 0;
+			}
+		}
+
+		> .history {
+			display: none;
+		}
+
+		nav {
+			display: inline-block;
+			text-align: center;
+			width: 100%;
+			position: relative;
+
+			a {
+				text-align: center;
+
+				&:after {
+					content: ' ';
+					background-color: @gray-light;
+					border-radius: 100%;
+					width: 20px;
+					height: 20px;
+					position: absolute;
+					left: 50%;
+					top: 20px;
+					margin-left: -10px;
+				}
+
+				&.history {
+					position: absolute;
+					right: 10px;
+					top: 0;
+				}
+			}
+		}
+	}
+}

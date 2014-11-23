@@ -3,53 +3,8 @@
 .dashboard.page {
 	&:extend(.container);
 
-	@media screen and (max-width: @screen-xs) {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
 	.dashboard-view {
-		@media screen and (min-width: @screen-xs) {
-			display: none;
-		}
-
-		> div {
-			&:extend(.btn-group all);
-
-			width: 100%;
-
-			button {
-				.make-xs-column(4);
-				&:extend(.btn);
-				&:extend(.btn-group .btn all);
-				&:extend(.btn-default);
-				&:extend(.btn-sm);
-
-				&.active {
-					&:extend(.btn-primary);
-				}
-			}
-		}
-	}
-
-	@media screen and (max-width: @screen-xs) {
-		h2 {
-			display: none;
-		}
-
-		.dashboard-row {
-			.candidates,
-			.vacancies,
-			.events {
-				display: none;
-			}
-
-			&.candidates .candidates,
-			&.vacancies .vacancies,
-			&.events .events {
-				display: block;
-			}
-		}
+		display: none;
 	}
 
 	.dashboard-row {
@@ -144,3 +99,5 @@
 		}
 	}
 }
+
+@import './dashboard.mobile.less';
