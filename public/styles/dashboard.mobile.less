@@ -1,5 +1,10 @@
 .dashboard.page {
+	padding-left: 0;
+	padding-right: 0;
+
 	.dashboard-view {
+		display: block;
+
 		> div {
 			&:extend(.btn-group all);
 
@@ -18,33 +23,22 @@
 			}
 		}
 	}
-}
 
-@media screen and (max-width: @screen-xs) {
-	.dashboard.page {
-		padding-left: 0;
-		padding-right: 0;
+	h2 {
+		display: none;
+	}
 
-		.dashboard-view {
-			display: block;
-		}
-
-		h2 {
+	.dashboard-row {
+		.candidates,
+		.vacancies,
+		.events {
 			display: none;
 		}
 
-		.dashboard-row {
-			.candidates,
-			.vacancies,
-			.events {
-				display: none;
-			}
-
-			&.candidates .candidates,
-			&.vacancies .vacancies,
-			&.events .events {
-				display: block;
-			}
+		&.candidates .candidates,
+		&.vacancies .vacancies,
+		&.events .events {
+			display: block;
 		}
 	}
 }

@@ -7,13 +7,18 @@ block scripts
 
 block content
 
-	div.candidate.page
+	div.candidate.page.personal-details
 		h1 
 			img.candidate-image(src=avatarImageUrl || '/public/images/icon_78759_profile.svg')
 			div
 				span.name #{name}
 				span.user-role Employee
 
+		div.candidate-view
+			div
+				button.personal-details.active Personal Details
+				button.history History
+				
 		section.personal-details
 			h3 Personal Details
 				a.edit(href='#')  Edit
@@ -87,12 +92,3 @@ block content
 										span.filter-count (#{activityType.activitiesCount})
 				-if (activityDetail)
 					+_candidate_activity_detail(id, activityDetail)
-
-		nav
-			a.personal-details(href='#').active Personal Details
-			a.history(href='#') History
-
-
-
-
-

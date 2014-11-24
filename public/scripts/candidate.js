@@ -1,4 +1,4 @@
-define([], function () {
+define(['/node_modules/zepto/zepto.min.js', '/node_modules/modernizr-prebuilt/dist/modernizr-build.min.js'], function ($_, modernizr_) {
 	document.getElementsByClassName('filters')[0].addEventListener('click', function (e) {
 		var historyListEl = document.getElementsByClassName('history-list')[0];
 		var className = '';
@@ -13,4 +13,12 @@ define([], function () {
 		}
 		historyListEl.className = 'history-list ' + className;
 	});
+
+	if (Modernizr.touchevents) {
+		$('.candidate-view').on('touchstart', function (e) {
+			$('.candidate-view button').removeClass('active');
+			$('.candidate.page').attr('class', 'candidate page ' + e.target.className);
+			$('.candidate-view .' + e.target.className).addClass('active');
+		});
+	}
 });

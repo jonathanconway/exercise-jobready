@@ -8,6 +8,7 @@ html(lang='en')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		include _favicons
 		link(rel='stylesheet', href='/public/styles/jobready.css')
+		link(rel='stylesheet', media='(max-width: 480px)', href='/public/styles/jobready.mobile.css')
 	body
 		include _header
 
@@ -20,7 +21,7 @@ html(lang='en')
 		// scripts
 
 		// -- live reload
-		script(src='//jonathan-pc.local:35729/livereload.js')
+		script(src='//localhost:35729/livereload.js')
 		script.
 			window.Model = !{serializedModel};
 		block scripts

@@ -6,25 +6,35 @@
 	&:extend(.container);
 
 	h1 {
-		@media screen and (max-width: @screen-xs) {
-			font-size: 1.5em;
+		padding-bottom: 10px;
+
+		img, > div {
+			height: 50px;
 		}
 
 		img.candidate-image {
-			width: 1.9em;
+			&:extend(.pull-left);
+			&:extend(.media .pull-left);
+
 			border-radius: 100%;
 		}
 
-		.name {
-			margin-left: 0.5em;
-			display: inline-block;
-		}
+		> div {
+			&:extend(.media-body);			
 
-		.user-role {
-			&:extend(.label);
-			&:extend(.label-default);
-			
-			margin-left: 0.5em;
+			.name {
+				margin-left: 0.5em;
+				display: inline-block;
+				line-height: 50px;
+				vertical-align: middle;
+			}
+
+			.user-role {
+				&:extend(.label);
+				&:extend(.label-default);
+				
+				margin-left: 0.5em;
+			}
 		}
 	}
 
@@ -36,7 +46,6 @@
 			text-transform: initial;
 			padding: 0 5px;
 			margin-left: 10px;
-			margin-top: -3px;
 		}
 
 		> div {
@@ -74,7 +83,6 @@
 
 			.home-address,
 			.postal-address {
-				.make-xs-column(12);
 				.make-sm-column(6);
 				.make-md-column(6);
 				.make-lg-column(6);
@@ -201,5 +209,3 @@
 		display: none;
 	}
 }
-
-@import './candidate.mobile.less';

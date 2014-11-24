@@ -21,7 +21,8 @@ module.exports = function(grunt) {
 				options: {
 				},
 				files: {
-					'public/styles/jobready.css': 'public/styles/jobready.less'
+					'public/styles/jobready.css': 'public/styles/jobready.less',
+					'public/styles/jobready.mobile.css': 'public/styles/jobready.mobile.less'
 				}
 			},
 		},

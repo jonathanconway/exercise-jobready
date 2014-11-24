@@ -1,25 +1,18 @@
-@media screen and (max-width: @screen-xs) {
-	.candidate.page {
-		padding-left: 0;
-		padding-right: 0;
+.candidate.page {
+	padding-left: 0;
+	padding-right: 0;
 
-		h1 {
-			position: relative;
+	h1 {
+		&:extend(.media);
 
-			img.candidate-image {
-				float: left;
-				width: 52px;
-			}
+		font-size: 1.5em;
+		position: relative;
 
-			> div {
-				height: 42px;
-				display: inline-block;
-			}
-
+		> div {
 			.name {
-				margin-left: 0.5em;
 				display: inline-block;
 				width: 100%;
+				line-height: 0;
 			}
 
 			.user-role {
@@ -29,38 +22,52 @@
 				margin-top: 0;
 			}
 		}
+	}
 
-		> .history {
-			display: none;
+	h3 {
+		display: none;
+	}
+
+	section.personal-details {
+		margin-top: 10px;
+
+		.home-address,
+		.postal-address {
+			.make-xs-column(6);
 		}
+	}
 
-		nav {
-			display: inline-block;
-			text-align: center;
+	.candidate-view {
+		display: block;
+
+		> div {
+			&:extend(.btn-group all);
+
 			width: 100%;
-			position: relative;
 
-			a {
-				text-align: center;
+			button {
+				.make-xs-column(6);
+				&:extend(.btn);
+				&:extend(.btn-group .btn all);
+				&:extend(.btn-default);
+				&:extend(.btn-sm);
 
-				&:after {
-					content: ' ';
-					background-color: @gray-light;
-					border-radius: 100%;
-					width: 20px;
-					height: 20px;
-					position: absolute;
-					left: 50%;
-					top: 20px;
-					margin-left: -10px;
-				}
-
-				&.history {
-					position: absolute;
-					right: 10px;
-					top: 0;
+				&.active {
+					&:extend(.btn-primary);
 				}
 			}
 		}
+	}
+
+	section {
+		&.personal-details,
+		&.history {
+			display: none;
+		}
+	}
+
+	&.personal-details section.personal-details,
+	&.history section.history {
+		display: block;
 	}
 }
