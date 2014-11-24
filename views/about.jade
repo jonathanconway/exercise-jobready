@@ -1,0 +1,18 @@
+extends layout
+
+block goback
+	a.goback(href='/',title='Go Back to Dashboard') Go Back to Dashboard
+
+block content
+
+	div.about.page
+		h1 About JobReady
+
+		h2 Icon Attributions
+
+		-each attr in nounProjectAttributions
+			p
+				| #{attr.iconName} designed by 
+				a(href='http://www.thenounproject.com/' + attr.urlUsername) #{attr.username}
+				|  from the 
+				a(href='http://www.thenounproject.com') Noun Project
