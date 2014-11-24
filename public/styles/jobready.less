@@ -9,20 +9,15 @@ html, body {
 	overflow: hidden;
 }
 
-@import './header';
-@import './dashboard';
-@import './candidate';
-
 body {
 	padding-bottom: @navbar-height;
 }
 
-footer {
-	&:extend(.navbar-fixed-bottom);
-	&:extend(.text-center);
-	.container-fixed();
-
-	z-index: 1;
-	background-color: white;
-	border-top: 1px solid @page-header-border-color;
+.page {
+	&:extend(.container);
 }
+
+@import './header';
+@import './dashboard';
+@import './candidate';
+@import './footer';
