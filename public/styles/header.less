@@ -8,10 +8,6 @@ body > header {
 	position: relative;
 	min-height: 0;
 
-	@media screen and (max-width: @screen-xs) {
-		padding: 0;
-	}
-
 	> div {
 		> h1 {
 			&:extend(.navbar-header);
@@ -32,6 +28,16 @@ body > header {
 			}
 		}
 
+		.goback {
+			display: block;
+			clear: left;
+			text-align: left;
+
+			&:before {
+				content: '< ';
+			}
+		}
+
 		nav {
 			&:extend(.nav-collapse);
 
@@ -44,25 +50,9 @@ body > header {
 				}
 			}
 
-			@media screen and (max-width: @screen-xs) {
-				width: 20px;
-				height: 20px;
-				position: absolute;
-				left: 0;
-				top: 5px;
-
-				background-image: url(/public/images/Icon_JC_HamburgerMenu.svg);
-				background-repeat: no-repeat;
-				background-position: 0;
-			}
-
 			ul {
 				&:extend(.nav all);
 				&:extend(.navbar-nav all);
-
-				@media screen and (max-width: @screen-xs) {
-					display: none;
-				}
 			}
 		}
 
@@ -71,16 +61,8 @@ body > header {
 			right: 0;
 			top: 0;
 
-			@media screen and (max-width: @screen-xs) {
-				display: inline-block;
-			}
-
 			.email {
 				font-size: 0.9em;
-
-				@media screen and (max-width: @screen-xs) {
-					display: none;
-				}
 			}
 
 			button {
@@ -88,9 +70,7 @@ body > header {
 				&:extend(.btn-default);
 				&:extend(.btn-sm);
 
-				@media screen and (min-width: @screen-xs) {
-					margin: 10px 0 10px 10px;
-				}
+				margin: 10px 0 10px 10px;
 			}
 		}
 	}

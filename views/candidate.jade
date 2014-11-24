@@ -2,6 +2,9 @@ extends layout
 
 include _candidate_activity_detail
 
+block goback
+	a.goback(href='/',title='Go Back to Dashboard') Go Back to Dashboard
+
 block scripts
 	script(src='/node_modules/requirejs/require.js', data-main='/public/scripts/candidate')
 
