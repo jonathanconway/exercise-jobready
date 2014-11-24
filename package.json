@@ -20,10 +20,10 @@
     "jade": "^1.7.0",
     "less": "^2.0.0",
     "less-middleware": "^1.0.4",
+    "modernizr-prebuilt": "^3.0.0-pre",
     "moment": "^2.8.3",
     "requirejs": "2.1.11",
-    "zepto": "0.0.4",
-    "modernizr": "^3.0.0-pre"
+    "zepto": "0.0.4"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

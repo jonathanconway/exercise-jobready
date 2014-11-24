@@ -1,4 +1,4 @@
-define(['/node_modules/zepto/zepto.min.js', '/node_modules/modernizr/dist/modernizr-build.min.js'], function ($_, _modernizr) {
+define(['/node_modules/zepto/zepto.min.js', '/node_modules/modernizr-prebuilt/dist/modernizr-build.min.js'], function ($_, _modernizr) {
 	if (Modernizr.touchevents) {
 		$('.dashboard-view').on('touchstart', function (e) {
 			$('.dashboard-view button').removeClass('active');
