@@ -1,6 +1,7 @@
+/* screen: candidate */
 
-@import './_utils';
-@import './_labels';
+@import (reference) './_link_only_on_mouseover';
+@import (reference) './_labels';
 
 .candidate.page {
 	h1 {
@@ -11,8 +12,8 @@
 		}
 
 		img.candidate-image {
+			.pull-left();
 			&:extend(.pull-left);
-			&:extend(.media .pull-left);
 
 			border-radius: 100%;
 		}
@@ -115,14 +116,14 @@
 				padding: 0;
 
 				li.activity {
-					&:extend(.media);
+					.media();
 
 					margin-top: @padding-base-vertical;
 					display: none;
 
 					> div:first-child {
+						.pull-left();
 						&:extend(.pull-left);
-						&:extend(.media .pull-left);
 					}
 
 					> div:last-child {
@@ -140,7 +141,7 @@
 					}
 
 					a {
-						&:extend(.link-only-on-mouseover);
+						.link-only-on-mouseover();
 					}
 				}
 

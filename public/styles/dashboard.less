@@ -1,4 +1,6 @@
-@import './_utils';
+/* screen: dashboard */
+
+@import (reference) './_link_only_on_mouseover';
 
 .dashboard.page {
 	.dashboard-view {
@@ -12,13 +14,13 @@
 			.make-sm-column(6);
 
 			.candidate {
-				&:extend(.media);
+				.media();
 
 				margin-top: 10px;
 
 				.candidate-image {
+					.pull-left();
 					&:extend(.pull-left);
-					&:extend(.media .pull-left);
 
 					img {
 						width: 1.9em;
@@ -36,7 +38,7 @@
 						margin: 0.2em 0 0 0;
 
 						a {
-							&:extend(.link-only-on-mouseover);
+							.link-only-on-mouseover();
 						}
 					}
 
@@ -63,13 +65,13 @@
 			.make-sm-column(6);
 
 			.vacancy {
-				&:extend(.media);
+				.media();
 
 				margin-top: 10px;
 
 				.vacancy-image {
+					.pull-left();
 					&:extend(.pull-left);
-					&:extend(.media .pull-left);
 
 					img {
 						width: 1.9em;

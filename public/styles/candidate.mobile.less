@@ -41,20 +41,13 @@
 		display: block;
 
 		> div {
-			&:extend(.btn-group all);
+			&:extend(.btn-group);
 
 			width: 100%;
 
 			button {
 				.make-xs-column(6);
-				&:extend(.btn);
 				&:extend(.btn-group .btn all);
-				&:extend(.btn-default);
-				&:extend(.btn-sm);
-
-				&.active {
-					&:extend(.btn-primary);
-				}
 			}
 		}
 	}

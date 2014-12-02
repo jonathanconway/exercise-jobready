@@ -1,23 +1,13 @@
-@import './bootstrap/bootstrap';
+@import '../../node_modules/bootstrap/less/scaffolding';
+@import (reference) '../../node_modules/bootstrap/less/bootstrap';
 
 @line-height-computed: 0.05;
 
-@import './_type';
-@import './_labels';
-
-html, body {
-	overflow: hidden;
-}
-
-body {
-	padding-bottom: @navbar-height;
-}
-
-.page {
-	&:extend(.container);
-}
+@import './type';
+@import './body';
 
 @import './header';
+@import './footer';
+
 @import './dashboard';
 @import './candidate';
-@import './footer';
