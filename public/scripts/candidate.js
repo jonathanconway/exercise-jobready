@@ -14,11 +14,9 @@ define(['/node_modules/zepto/zepto.min.js', '/node_modules/modernizr-prebuilt/di
 		historyListEl.className = 'history-list ' + className;
 	});
 
-	if (Modernizr.touchevents) {
-		$('.candidate-view').on('touchstart', function (e) {
-			$('.candidate-view button').removeClass('active');
-			$('.candidate.page').attr('class', 'candidate page ' + e.target.className);
-			$('.candidate-view .' + e.target.className).addClass('active');
-		});
-	}
+	$('.candidate-view').on(Modernizr.touchevents ? 'touchstart' : 'click', function (e) {
+		$('.candidate-view button').removeClass('active');
+		$('.candidate.page').attr('class', 'candidate page ' + e.target.className);
+		$('.candidate-view .' + e.target.className).addClass('active');
+	});
 });
