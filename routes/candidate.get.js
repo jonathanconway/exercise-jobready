@@ -62,11 +62,7 @@ define(['app', 'moment', '../services/repository'], function(app, moment, reposi
 		} else {
 			model.activityDetail = null;
 		}
-
-		// if (!candidate) {
-		// 	res.redirect('/404');
-		// }
-
+		
 		model.serializedModel = JSON.stringify(model);
 
 		res.render('candidate', model);
